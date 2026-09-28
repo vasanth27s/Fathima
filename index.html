@@ -1,0 +1,2515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fathima — October 9 ✨</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#030006;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ===============================
+   LOADER
+================================ */
+
+.loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:#030006;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    transition:1.2s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.loader-ring{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,.08);
+    border-top-color:#ff5fa2;
+    border-right-color:#9e63ff;
+    animation:spin 1.2s linear infinite;
+}
+
+.loader-text{
+    margin-top:25px;
+    font-size:10px;
+    letter-spacing:5px;
+    color:#aaa;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ===============================
+   BACKGROUND
+================================ */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,50,150,.16),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(120,50,255,.16),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255,30,120,.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #030006,
+            #100018,
+            #050009
+        );
+}
+
+/* ===============================
+   PARTICLES
+================================ */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+.particle{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 0 10px #fff;
+    animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    85%{
+        opacity:.8;
+    }
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(92%,900px);
+    height:62px;
+
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    border-radius:50px;
+
+    background:rgba(15,5,25,.5);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4),
+        inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.logo{
+    font-family:'Great Vibes',cursive;
+    font-size:29px;
+    color:#fff;
+    text-shadow:
+        0 0 20px rgba(255,80,170,.8);
+}
+
+.nav-center{
+    font-size:10px;
+    letter-spacing:4px;
+    color:#c4b4c4;
+}
+
+.music-btn{
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.1);
+    background:rgba(255,80,170,.15);
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:130px 20px 100px;
+
+    overflow:hidden;
+}
+
+.hero-content{
+    max-width:1000px;
+    position:relative;
+    z-index:5;
+}
+
+.intro{
+    font-size:11px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    color:#bbaaba;
+    margin-bottom:25px;
+
+    animation:fadeUp 1.5s ease;
+}
+
+.hero-name{
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(90px,18vw,190px);
+
+    line-height:.75;
+
+    font-weight:400;
+
+    background:
+        linear-gradient(
+            120deg,
+            #fff,
+            #ffb1d6,
+            #d69cff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 7s ease infinite,
+        nameFloat 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255,90,180,.35)
+        );
+}
+
+@keyframes gradientMove{
+    0%,100%{
+        background-position:0%;
+    }
+
+    50%{
+        background-position:100%;
+    }
+}
+
+@keyframes nameFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.hero-title{
+    margin-top:35px;
+
+    font-family:'Cinzel',serif;
+
+    font-size:
+        clamp(22px,4vw,38px);
+
+    letter-spacing:
+        clamp(5px,1vw,12px);
+}
+
+.hero-description{
+    max-width:650px;
+
+    margin:30px auto;
+
+    color:#aaa0ad;
+
+    line-height:2;
+
+    font-size:14px;
+}
+
+.hero-button{
+    margin-top:20px;
+
+    padding:17px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #ff3e91,
+            #9b4cff
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,50,150,.3),
+        0 20px 50px rgba(0,0,0,.4);
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.hero-button:hover{
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 60px rgba(255,50,150,.5);
+}
+
+.orb{
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255,255,255,.7),
+            rgba(255,80,170,.2) 15%,
+            rgba(150,60,255,.08) 45%,
+            transparent 70%
+        );
+
+    filter:blur(2px);
+
+    opacity:.55;
+
+    animation:orb 7s ease-in-out infinite;
+}
+
+@keyframes orb{
+    0%,100%{
+        transform:scale(1) translateY(0);
+    }
+
+    50%{
+        transform:scale(1.08) translateY(-25px);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===============================
+   GENERAL SECTIONS
+================================ */
+
+section{
+    position:relative;
+    z-index:5;
+    padding:110px 20px;
+}
+
+.section-title{
+    text-align:center;
+
+    font-family:'Cinzel',serif;
+
+    font-size:
+        clamp(25px,5vw,48px);
+
+    font-weight:400;
+}
+
+.section-subtitle{
+    text-align:center;
+
+    margin-top:12px;
+
+    color:#8e8390;
+
+    font-size:13px;
+}
+
+/* ===============================
+   DATE
+================================ */
+
+.date-section{
+    text-align:center;
+}
+
+.date-circle{
+    width:
+        clamp(240px,50vw,400px);
+
+    height:
+        clamp(240px,50vw,400px);
+
+    border-radius:50%;
+
+    margin:70px auto 40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,100,180,.15),
+            rgba(120,50,180,.05),
+            transparent 70%
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 0 80px rgba(255,50,150,.12),
+        inset 0 0 60px rgba(255,255,255,.03);
+
+    animation:
+        dateFloat 5s ease-in-out infinite;
+}
+
+.date-circle::before{
+    content:"";
+
+    position:absolute;
+    inset:-20px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,100,180,.1);
+
+    animation:
+        spin 15s linear infinite;
+}
+
+@keyframes dateFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.date-number{
+    font-family:'Cinzel',serif;
+    font-size:90px;
+    line-height:1;
+
+    background:
+        linear-gradient(
+            120deg,
+            white,
+            #ff9bc9,
+            #bd8aff
+        );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.date-month{
+    font-size:13px;
+    letter-spacing:8px;
+    color:#aaa;
+    margin-top:15px;
+}
+
+/* ===============================
+   COUNTDOWN
+================================ */
+
+.countdown{
+    max-width:850px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.time-box{
+    min-height:145px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.02)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.3);
+}
+
+.time-number{
+    font-family:'Cinzel',serif;
+    font-size:42px;
+}
+
+.time-label{
+    margin-top:10px;
+    color:#8f8491;
+    font-size:9px;
+    letter-spacing:4px;
+}
+
+/* ===============================
+   3D CAKE
+================================ */
+
+.cake-area{
+    min-height:720px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+}
+
+.cake{
+    width:280px;
+    height:260px;
+
+    position:relative;
+
+    margin:80px auto 50px;
+
+    transform-style:preserve-3d;
+
+    animation:
+        cakeFloat 5s ease-in-out infinite;
+}
+
+@keyframes cakeFloat{
+    0%,100%{
+        transform:
+            translateY(0)
+            rotateY(-8deg);
+    }
+
+    50%{
+        transform:
+            translateY(-15px)
+            rotateY(8deg);
+    }
+}
+
+.cake-bottom{
+    position:absolute;
+
+    width:240px;
+    height:90px;
+
+    left:20px;
+    bottom:0;
+
+    border-radius:
+        0 0 30px 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7d1247,
+            #ff4f9a,
+            #941b5c
+        );
+
+    box-shadow:
+        0 30px 60px
+        rgba(255,40,140,.25);
+}
+
+.cake-middle{
+    position:absolute;
+
+    width:210px;
+    height:75px;
+
+    left:35px;
+    bottom:70px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ef589b,
+            #ffb5d6,
+            #dc4b91
+        );
+}
+
+.cake-top{
+    position:absolute;
+
+    width:180px;
+    height:60px;
+
+    left:50px;
+    bottom:130px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #fff,
+            #ff9bc7
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(255,140,200,.4);
+}
+
+.cake-cream{
+    position:absolute;
+
+    width:160px;
+    height:35px;
+
+    left:60px;
+    bottom:150px;
+
+    border-radius:50%;
+
+    background:#fff;
+}
+
+.candle{
+    position:absolute;
+
+    width:16px;
+    height:65px;
+
+    left:132px;
+    bottom:165px;
+
+    border-radius:7px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #fff 0 8px,
+            #ff67aa 8px 16px
+        );
+}
+
+.flame{
+    position:absolute;
+
+    width:28px;
+    height:42px;
+
+    left:126px;
+    bottom:225px;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #ffd35e,
+            #ff5100
+        );
+
+    box-shadow:
+        0 0 20px #ffb347,
+        0 0 60px #ff4500;
+
+    animation:flame 1s infinite alternate;
+}
+
+@keyframes flame{
+    from{
+        transform:
+            rotate(-45deg)
+            scale(.9);
+    }
+
+    to{
+        transform:
+            rotate(-45deg)
+            scale(1.1);
+    }
+}
+
+/* ===============================
+   MESSAGE
+================================ */
+
+.message-container{
+    max-width:900px;
+    margin:60px auto 0;
+}
+
+.message-card{
+    padding:
+        clamp(35px,7vw,70px);
+
+    border-radius:35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.02)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.45);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.message-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    right:-150px;
+    top:-150px;
+
+    background:#ff3d91;
+
+    filter:blur(130px);
+
+    opacity:.12;
+}
+
+.message{
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(30px,5vw,52px);
+
+    line-height:1.5;
+
+    text-align:center;
+
+    color:#ffe4f1;
+}
+
+.message-text{
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#aaa0ac;
+
+    line-height:2;
+
+    font-size:14px;
+}
+
+/* ===============================
+   WISHES
+================================ */
+
+.wishes{
+    max-width:1100px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.wish{
+    min-height:280px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    transition:.5s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+}
+
+.wish:hover{
+    transform:
+        translateY(-12px)
+        rotateX(4deg);
+
+    border-color:
+        rgba(255,100,180,.3);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.4);
+}
+
+.wish-icon{
+    font-size:45px;
+
+    margin-bottom:auto;
+}
+
+.wish h3{
+    font-family:'Cinzel',serif;
+    margin-bottom:12px;
+}
+
+.wish p{
+    color:#958a97;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* ===============================
+   GIFT
+================================ */
+
+.gift-section{
+    min-height:700px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+.gift{
+    width:170px;
+    height:170px;
+
+    position:relative;
+
+    margin:80px auto 45px;
+
+    cursor:pointer;
+
+    animation:
+        giftFloat 3s ease-in-out infinite;
+}
+
+@keyframes giftFloat{
+    0%,100%{
+        transform:
+            translateY(0)
+            rotateY(-8deg);
+    }
+
+    50%{
+        transform:
+            translateY(-15px)
+            rotateY(8deg);
+    }
+}
+
+.gift-box{
+    position:absolute;
+
+    width:140px;
+    height:105px;
+
+    left:15px;
+    bottom:0;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a91860,
+            #ff5ba5,
+            #a91860
+        );
+
+    box-shadow:
+        0 30px 60px
+        rgba(255,40,140,.25);
+}
+
+.gift-lid{
+    position:absolute;
+
+    width:165px;
+    height:38px;
+
+    left:2px;
+    bottom:95px;
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4d9c,
+            #ffacd2,
+            #ff4d9c
+        );
+}
+
+.ribbon-v{
+    position:absolute;
+
+    width:22px;
+    height:145px;
+
+    left:74px;
+    bottom:0;
+
+    background:#ffd568;
+}
+
+.ribbon-h{
+    position:absolute;
+
+    width:165px;
+    height:20px;
+
+    left:2px;
+    bottom:50px;
+
+    background:#ffd568;
+}
+
+.bow{
+    position:absolute;
+
+    width:70px;
+    height:40px;
+
+    left:50px;
+    bottom:120px;
+
+    z-index:5;
+}
+
+.bow::before,
+.bow::after{
+    content:"";
+
+    position:absolute;
+
+    width:38px;
+    height:28px;
+
+    border:
+        9px solid
+        #ffd568;
+
+    border-radius:50%;
+}
+
+.bow::before{
+    left:-10px;
+    transform:rotate(25deg);
+}
+
+.bow::after{
+    right:-10px;
+    transform:rotate(-25deg);
+}
+
+/* ===============================
+   FINAL
+================================ */
+
+.final{
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+.final-small{
+    font-size:11px;
+
+    letter-spacing:7px;
+
+    color:#8d808e;
+}
+
+.final-name{
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(75px,15vw,170px);
+
+    margin:20px 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            #fff,
+            #ff82b8,
+            #c18aff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:gradientMove 7s infinite;
+}
+
+.final-message{
+    max-width:650px;
+
+    color:#a89da9;
+
+    line-height:2;
+
+    font-size:14px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer{
+    text-align:center;
+
+    padding:
+        40px 20px 60px;
+
+    color:#5f5662;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+}
+
+/* ===============================
+   MODAL
+================================ */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.82);
+
+    backdrop-filter:blur(18px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.5s;
+}
+
+.modal.active{
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+.modal-box{
+    width:100%;
+
+    max-width:680px;
+
+    padding:
+        clamp(35px,7vw,70px);
+
+    text-align:center;
+
+    border-radius:35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(40,10,50,.97),
+            rgba(8,3,15,.97)
+        );
+
+    box-shadow:
+        0 40px 120px
+        rgba(0,0,0,.8);
+
+    transform:scale(.8);
+
+    transition:.5s;
+}
+
+.modal.active .modal-box{
+    transform:scale(1);
+}
+
+.modal-box h2{
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(50px,10vw,80px);
+
+    color:#ffacd0;
+}
+
+.modal-box p{
+    color:#bcb0bd;
+
+    line-height:2;
+
+    margin:25px auto;
+}
+
+.close{
+    padding:12px 27px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    cursor:pointer;
+}
+
+/* ===============================
+   FLOATING HEARTS
+================================ */
+
+.heart{
+    position:fixed;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    bottom:-30px;
+
+    animation:
+        heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:
+            translateY(0)
+            scale(.5)
+            rotate(0);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-105vh)
+            scale(1.3)
+            rotate(40deg);
+
+        opacity:0;
+    }
+}
+
+/* ===============================
+   CONFETTI
+================================ */
+
+.confetti{
+    position:fixed;
+
+    width:8px;
+    height:14px;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    animation:
+        confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(900deg);
+    }
+}
+
+/* ===============================
+   REVEAL
+================================ */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width:700px){
+
+    nav{
+        top:12px;
+
+        height:55px;
+
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    .nav-center{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .music-btn{
+        width:35px;
+        height:35px;
+    }
+
+    .orb{
+        width:300px;
+        height:300px;
+    }
+
+    .intro{
+        letter-spacing:4px;
+        font-size:9px;
+    }
+
+    .hero-title{
+        letter-spacing:5px;
+    }
+
+    .countdown{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .time-box{
+        min-height:115px;
+    }
+
+    .time-number{
+        font-size:32px;
+    }
+
+    .wishes{
+        grid-template-columns:1fr;
+    }
+
+    .cake{
+        transform:scale(.8);
+    }
+
+    .message-card{
+        padding:35px 22px;
+    }
+
+}
+
+/* ===============================
+   REDUCED MOTION
+================================ */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+
+    <div class="loader-ring"></div>
+
+    <div class="loader-text">
+        CREATING SOMETHING SPECIAL FOR FATHIMA
+    </div>
+
+</div>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- NAVIGATION -->
+<nav>
+
+    <div class="logo">
+        Fathima ✦
+    </div>
+
+    <div class="nav-center">
+        OCTOBER 09
+    </div>
+
+    <button
+        class="music-btn"
+        id="musicBtn">
+        ♫
+    </button>
+
+</nav>
+
+
+<!-- ===============================
+     HERO
+================================ -->
+
+<section class="hero">
+
+    <div class="orb"></div>
+
+    <div class="hero-content">
+
+        <div class="intro">
+            A little something for
+        </div>
+
+        <div class="hero-name">
+            Fathima
+        </div>
+
+        <div class="hero-title">
+            HAPPY BIRTHDAY
+        </div>
+
+        <p class="hero-description">
+
+            There are some dates that are easy to remember.
+
+            <br>
+
+            And then there is October 9.
+
+            <br><br>
+
+            A date that deserves a little more
+            light, a little more magic,
+            and a very special wish.
+
+        </p>
+
+        <button
+            class="hero-button"
+            onclick="openSurprise()">
+
+            ✨ ENTER YOUR SURPRISE
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     DATE
+================================ -->
+
+<section class="date-section reveal">
+
+    <h2 class="section-title">
+        The Day
+    </h2>
+
+    <p class="section-subtitle">
+        A date worth remembering
+    </p>
+
+    <div class="date-circle">
+
+        <div class="date-number">
+            09
+        </div>
+
+        <div class="date-month">
+            OCTOBER
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     COUNTDOWN
+================================ -->
+
+<section class="reveal">
+
+    <h2 class="section-title">
+        Counting Down To You
+    </h2>
+
+    <p class="section-subtitle">
+        Until Fathima's special day
+    </p>
+
+    <div class="countdown">
+
+        <div class="time-box">
+
+            <div
+                class="time-number"
+                id="days">
+                00
+            </div>
+
+            <div class="time-label">
+                DAYS
+            </div>
+
+        </div>
+
+        <div class="time-box">
+
+            <div
+                class="time-number"
+                id="hours">
+                00
+            </div>
+
+            <div class="time-label">
+                HOURS
+            </div>
+
+        </div>
+
+        <div class="time-box">
+
+            <div
+                class="time-number"
+                id="minutes">
+                00
+            </div>
+
+            <div class="time-label">
+                MINUTES
+            </div>
+
+        </div>
+
+        <div class="time-box">
+
+            <div
+                class="time-number"
+                id="seconds">
+                00
+            </div>
+
+            <div class="time-label">
+                SECONDS
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     CAKE
+================================ -->
+
+<section class="cake-area reveal">
+
+    <h2 class="section-title">
+        Make A Wish, Fathima
+    </h2>
+
+    <p class="section-subtitle">
+        This little cake is waiting for you.
+    </p>
+
+    <div class="cake">
+
+        <div class="flame"></div>
+
+        <div class="candle"></div>
+
+        <div class="cake-cream"></div>
+
+        <div class="cake-top"></div>
+
+        <div class="cake-middle"></div>
+
+        <div class="cake-bottom"></div>
+
+    </div>
+
+    <p class="section-subtitle">
+        Close your eyes. Make a wish. ✨
+    </p>
+
+</section>
+
+
+<!-- ===============================
+     PERSONAL MESSAGE
+================================ -->
+
+<section class="reveal">
+
+    <h2 class="section-title">
+        For Fathima
+    </h2>
+
+    <div class="message-container">
+
+        <div class="message-card">
+
+            <div class="message">
+
+                "May your birthday be filled
+                with everything that makes
+                your heart happy."
+
+            </div>
+
+            <div class="message-text">
+
+                Fathima,
+
+                <br><br>
+
+                I didn't want to simply say
+                "Happy Birthday" and leave it there.
+
+                <br><br>
+
+                So I made this little place
+                just for your special day.
+
+                <br><br>
+
+                I hope today brings you
+                genuine smiles,
+                beautiful moments,
+                peaceful thoughts
+                and memories you will keep
+                for a long time.
+
+                <br><br>
+
+                You deserve a beautiful year ahead.
+
+                <br><br>
+
+                Happy Birthday, Fathima. 🤍
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     WISHES
+================================ -->
+
+<section class="reveal">
+
+    <h2 class="section-title">
+        Three Wishes For You
+    </h2>
+
+    <p class="section-subtitle">
+        For the year ahead, Fathima
+    </p>
+
+    <div class="wishes">
+
+        <div class="wish">
+
+            <div class="wish-icon">
+                ✨
+            </div>
+
+            <h3>
+                More Happiness
+            </h3>
+
+            <p>
+
+                May your days be filled with
+                little moments that make you
+                smile without even trying.
+
+            </p>
+
+        </div>
+
+
+        <div class="wish">
+
+            <div class="wish-icon">
+                🌙
+            </div>
+
+            <h3>
+                Beautiful Dreams
+            </h3>
+
+            <p>
+
+                May the dreams you carry quietly
+                become beautiful memories
+                you can proudly look back on.
+
+            </p>
+
+        </div>
+
+
+        <div class="wish">
+
+            <div class="wish-icon">
+                🌹
+            </div>
+
+            <h3>
+                Wonderful Memories
+            </h3>
+
+            <p>
+
+                May this new chapter of your life
+                give you countless moments
+                worth remembering.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     GIFT
+================================ -->
+
+<section class="gift-section reveal">
+
+    <h2 class="section-title">
+        One More Thing...
+    </h2>
+
+    <p class="section-subtitle">
+        Something small is waiting for you.
+    </p>
+
+    <div
+        class="gift"
+        onclick="openGift()">
+
+        <div class="bow"></div>
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-box"></div>
+
+        <div class="ribbon-v"></div>
+
+        <div class="ribbon-h"></div>
+
+    </div>
+
+    <button
+        class="hero-button"
+        onclick="openGift()">
+
+        🎁 OPEN THE SURPRISE
+
+    </button>
+
+</section>
+
+
+<!-- ===============================
+     FINAL
+================================ -->
+
+<section class="final reveal">
+
+    <div class="final-small">
+        OCTOBER • 09
+    </div>
+
+    <div class="final-name">
+        Fathima
+    </div>
+
+    <p class="final-message">
+
+        May your smile stay bright,
+
+        <br>
+
+        may your dreams keep growing,
+
+        <br>
+
+        may you always have people
+        who genuinely care about you,
+
+        <br>
+
+        and may this new chapter
+        bring you countless beautiful moments.
+
+        <br><br>
+
+        Happy Birthday, Fathima. 🤍
+
+        <br><br>
+
+        Keep shining.
+
+    </p>
+
+</section>
+
+
+<footer>
+
+    MADE WITH ✦ FOR FATHIMA
+
+</footer>
+
+
+<!-- ===============================
+     MODAL
+================================ -->
+
+<div
+    class="modal"
+    id="modal">
+
+    <div class="modal-box">
+
+        <h2>
+            Happy Birthday Fathima ✨
+        </h2>
+
+        <p>
+
+            Today is your day.
+
+            <br><br>
+
+            So forget everything else
+            for a little while.
+
+            <br><br>
+
+            Smile a little more.
+            Laugh a little louder.
+            Enjoy every beautiful moment.
+
+            <br><br>
+
+            And remember...
+
+            <br><br>
+
+            Somewhere in this world,
+            someone thought October 9
+            was important enough
+            to create all of this for you.
+
+            <br><br>
+
+            Have the most beautiful birthday. 🌹
+
+        </p>
+
+        <button
+            class="close"
+            onclick="closeModal()">
+
+            CLOSE ✦
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   LOADER
+========================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        setTimeout(
+            () => {
+
+                document
+                    .getElementById("loader")
+                    .classList
+                    .add("hide");
+
+            },
+            1800
+        );
+
+    }
+);
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i = 0; i < 110; i++){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (5 + Math.random() * 12) + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 10 + "s";
+
+    particle.style.opacity =
+        Math.random();
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =========================================
+   OCTOBER 9 COUNTDOWN
+========================================= */
+
+function getNextBirthday(){
+
+    const now =
+        new Date();
+
+    let year =
+        now.getFullYear();
+
+    let birthday =
+        new Date(
+            year,
+            9,
+            9,
+            0,
+            0,
+            0
+        );
+
+    if(now > birthday){
+
+        birthday =
+            new Date(
+                year + 1,
+                9,
+                9,
+                0,
+                0,
+                0
+            );
+
+    }
+
+    return birthday;
+}
+
+
+function updateCountdown(){
+
+    const now =
+        new Date();
+
+    const birthday =
+        getNextBirthday();
+
+    const difference =
+        birthday - now;
+
+    if(difference <= 0){
+
+        document
+            .getElementById("days")
+            .textContent = "00";
+
+        document
+            .getElementById("hours")
+            .textContent = "00";
+
+        document
+            .getElementById("minutes")
+            .textContent = "00";
+
+        document
+            .getElementById("seconds")
+            .textContent = "00";
+
+        return;
+    }
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+
+    document
+        .getElementById("days")
+        .textContent =
+        String(days)
+        .padStart(2,"0");
+
+
+    document
+        .getElementById("hours")
+        .textContent =
+        String(hours)
+        .padStart(2,"0");
+
+
+    document
+        .getElementById("minutes")
+        .textContent =
+        String(minutes)
+        .padStart(2,"0");
+
+
+    document
+        .getElementById("seconds")
+        .textContent =
+        String(seconds)
+        .padStart(2,"0");
+
+}
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "heart";
+
+    const symbols = [
+        "♡",
+        "♥",
+        "❤",
+        "✦",
+        "✨"
+    ];
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.color =
+        Math.random() > .5
+        ? "#ff75b5"
+        : "#c38cff";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 24)
+        + "px";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4)
+        + "s";
+
+    document.body.appendChild(
+        heart
+    );
+
+    setTimeout(
+        () => heart.remove(),
+        8000
+    );
+
+}
+
+setInterval(
+    createHeart,
+    1300
+);
+
+
+/* =========================================
+   SURPRISE
+========================================= */
+
+function openSurprise(){
+
+    document
+        .getElementById("modal")
+        .classList
+        .add("active");
+
+    launchConfetti();
+
+}
+
+
+function openGift(){
+
+    launchConfetti();
+
+    document
+        .getElementById("modal")
+        .classList
+        .add("active");
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("modal")
+        .classList
+        .remove("active");
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function launchConfetti(){
+
+    for(
+        let i = 0;
+        i < 130;
+        i++
+    ){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className =
+            "confetti";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.top =
+            (-20 -
+            Math.random() * 100)
+            + "px";
+
+        const colors = [
+            "#ff5ca8",
+            "#d18cff",
+            "#ffd86b",
+            "#ffffff",
+            "#72e8ff"
+        ];
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3)
+            + "s";
+
+        piece.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(
+            piece
+        );
+
+        setTimeout(
+            () => piece.remove(),
+            5000
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.15
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+        element =>
+            observer.observe(element)
+    );
+
+
+/* =========================================
+   MOUSE PARALLAX
+========================================= */
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        const x =
+            (event.clientX /
+            window.innerWidth - .5)
+            * 15;
+
+        const y =
+            (event.clientY /
+            window.innerHeight - .5)
+            * 15;
+
+        const orb =
+            document.querySelector(".orb");
+
+        if(orb){
+
+            orb.style.transform =
+                `translate(${x}px,${y}px)`;
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   CLOSE MODAL OUTSIDE
+========================================= */
+
+document
+    .getElementById("modal")
+    .addEventListener(
+        "click",
+        event => {
+
+            if(
+                event.target.id === "modal"
+            ){
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+/* =========================================
+   ESCAPE
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+/*
+
+To add music:
+
+1. Put birthday.mp3 beside index.html
+
+2. Uncomment:
+
+const music =
+    new Audio("birthday.mp3");
+
+3. Then use the music button.
+
+*/
+
+let music = null;
+let musicPlaying = false;
+
+document
+    .getElementById("musicBtn")
+    .addEventListener(
+        "click",
+        () => {
+
+            if(!music){
+
+                alert(
+                    "Add birthday.mp3 beside index.html and connect it in the JavaScript section."
+                );
+
+                return;
+
+            }
+
+            if(musicPlaying){
+
+                music.pause();
+
+                musicPlaying = false;
+
+                document
+                    .getElementById("musicBtn")
+                    .textContent = "♫";
+
+            }else{
+
+                music.play();
+
+                musicPlaying = true;
+
+                document
+                    .getElementById("musicBtn")
+                    .textContent = "❚❚";
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
