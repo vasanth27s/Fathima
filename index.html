@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1.0,
+             maximum-scale=1.0,
+             user-scalable=no"
+>
+
+<meta name="theme-color" content="#050008">
 
 <title>Fathima — October 9 ✨</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
 
 *{
     margin:0;
@@ -20,48 +30,95 @@ html{
 }
 
 body{
+    margin:0;
     background:#030006;
     color:#fff;
     font-family:'Montserrat',sans-serif;
     overflow-x:hidden;
 }
 
-/* ===============================
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-20;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,40,150,.18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(110,50,255,.17),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255,40,130,.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #020004,
+            #0d0017,
+            #030006
+        );
+}
+
+/* =====================================================
    LOADER
-================================ */
+===================================================== */
 
 .loader{
     position:fixed;
     inset:0;
     z-index:99999;
-    background:#030006;
+
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    transition:1.2s ease;
+
+    background:#020004;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 .loader.hide{
     opacity:0;
-    pointer-events:none;
+    visibility:hidden;
 }
 
 .loader-ring{
-    width:90px;
-    height:90px;
+    width:80px;
+    height:80px;
+
     border-radius:50%;
+
     border:2px solid rgba(255,255,255,.08);
-    border-top-color:#ff5fa2;
-    border-right-color:#9e63ff;
+    border-top-color:#ff5ba5;
+    border-right-color:#9c62ff;
+
     animation:spin 1.2s linear infinite;
 }
 
 .loader-text{
     margin-top:25px;
-    font-size:10px;
-    letter-spacing:5px;
+
     color:#aaa;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    text-align:center;
 }
 
 @keyframes spin{
@@ -70,62 +127,39 @@ body{
     }
 }
 
-/* ===============================
-   BACKGROUND
-================================ */
-
-.background{
-    position:fixed;
-    inset:0;
-    z-index:-5;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255,50,150,.16),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(120,50,255,.16),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(255,30,120,.08),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #030006,
-            #100018,
-            #050009
-        );
-}
-
-/* ===============================
+/* =====================================================
    PARTICLES
-================================ */
+===================================================== */
 
 #particles{
     position:fixed;
     inset:0;
-    pointer-events:none;
+
     z-index:1;
+
+    pointer-events:none;
 }
 
 .particle{
     position:absolute;
+
     width:2px;
     height:2px;
-    background:#fff;
+
     border-radius:50%;
-    box-shadow:0 0 10px #fff;
-    animation:particleFloat linear infinite;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 10px #fff;
+
+    animation:
+        particleFloat linear infinite;
 }
 
 @keyframes particleFloat{
-    from{
+
+    0%{
         transform:translateY(110vh);
         opacity:0;
     }
@@ -138,124 +172,240 @@ body{
         opacity:.8;
     }
 
-    to{
+    100%{
         transform:translateY(-10vh);
         opacity:0;
     }
 }
 
-/* ===============================
-   NAVIGATION
-================================ */
+/* =====================================================
+   NAV
+===================================================== */
 
 nav{
     position:fixed;
-    top:20px;
+
+    top:18px;
     left:50%;
+
     transform:translateX(-50%);
 
     width:min(92%,900px);
+
     height:62px;
 
     z-index:1000;
 
     display:flex;
+
     align-items:center;
     justify-content:space-between;
 
-    padding:0 22px;
+    padding:0 18px 0 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 
     border-radius:50px;
 
-    background:rgba(15,5,25,.5);
-
-    border:1px solid rgba(255,255,255,.12);
+    background:
+        rgba(10,3,18,.55);
 
     backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.4),
+        0 20px 60px rgba(0,0,0,.45),
         inset 0 1px 0 rgba(255,255,255,.05);
 }
 
 .logo{
     font-family:'Great Vibes',cursive;
-    font-size:29px;
-    color:#fff;
-    text-shadow:
-        0 0 20px rgba(255,80,170,.8);
-}
 
-.nav-center{
-    font-size:10px;
-    letter-spacing:4px;
-    color:#c4b4c4;
-}
-
-.music-btn{
-    width:40px;
-    height:40px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    background:rgba(255,255,255,.05);
+    font-size:30px;
 
     color:white;
 
-    cursor:pointer;
-
-    transition:.3s;
+    text-shadow:
+        0 0 20px
+        rgba(255,90,180,.7);
 }
 
-.music-btn:hover{
-    transform:scale(1.1);
-    background:rgba(255,80,170,.15);
+.nav-date{
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#a99baa;
 }
 
-/* ===============================
-   HERO
-================================ */
+/* =====================================================
+   MUSIC
+===================================================== */
 
-.hero{
-    min-height:100vh;
+.music-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-    position:relative;
-    z-index:2;
+.music-status{
+    font-size:9px;
+    color:#9d919f;
+    letter-spacing:1px;
+
+    max-width:0;
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    transition:.4s;
+}
+
+.music-status.show{
+    max-width:100px;
+}
+
+.music-btn{
+    width:43px;
+    height:43px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,150,210,.3);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,80,170,.17),
+            rgba(255,255,255,.03)
+        );
+
+    color:#fff;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    -webkit-tap-highlight-color:transparent;
+
+    transition:
+        transform .25s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.music-btn:active{
+    transform:scale(.9);
+}
+
+.music-btn.playing{
+    background:
+        rgba(255,70,160,.28);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,70,160,.5);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
     text-align:center;
 
-    padding:130px 20px 100px;
+    padding:
+        130px 20px 90px;
 
     overflow:hidden;
 }
 
 .hero-content{
-    max-width:1000px;
     position:relative;
+
     z-index:5;
+
+    max-width:1000px;
+}
+
+.orb{
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255,255,255,.65),
+            rgba(255,80,170,.2) 15%,
+            rgba(140,60,255,.08) 48%,
+            transparent 70%
+        );
+
+    filter:blur(2px);
+
+    opacity:.55;
+
+    animation:
+        orbFloat 7s ease-in-out infinite;
+
+    pointer-events:none;
+}
+
+@keyframes orbFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50%{
+        transform:
+            translateY(-25px)
+            scale(1.06);
+    }
 }
 
 .intro{
     font-size:11px;
-    letter-spacing:8px;
-    text-transform:uppercase;
-    color:#bbaaba;
-    margin-bottom:25px;
 
-    animation:fadeUp 1.5s ease;
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    color:#9f929f;
+
+    margin-bottom:28px;
 }
 
 .hero-name{
     font-family:'Great Vibes',cursive;
 
     font-size:
-        clamp(90px,18vw,190px);
+        clamp(85px,18vw,190px);
 
     line-height:.75;
 
@@ -266,13 +416,14 @@ nav{
             120deg,
             #fff,
             #ffb1d6,
-            #d69cff,
+            #d19aff,
             #fff
         );
 
     background-size:300%;
 
     -webkit-background-clip:text;
+    background-clip:text;
 
     color:transparent;
 
@@ -288,6 +439,7 @@ nav{
 }
 
 @keyframes gradientMove{
+
     0%,100%{
         background-position:0%;
     }
@@ -298,6 +450,7 @@ nav{
 }
 
 @keyframes nameFloat{
+
     0%,100%{
         transform:translateY(0);
     }
@@ -308,12 +461,12 @@ nav{
 }
 
 .hero-title{
-    margin-top:35px;
+    margin-top:40px;
 
     font-family:'Cinzel',serif;
 
     font-size:
-        clamp(22px,4vw,38px);
+        clamp(20px,4vw,38px);
 
     letter-spacing:
         clamp(5px,1vw,12px);
@@ -326,9 +479,9 @@ nav{
 
     color:#aaa0ad;
 
-    line-height:2;
-
     font-size:14px;
+
+    line-height:2;
 }
 
 .hero-button{
@@ -342,6 +495,8 @@ nav{
 
     color:white;
 
+    font-family:'Montserrat',sans-serif;
+
     font-weight:600;
 
     letter-spacing:2px;
@@ -349,17 +504,21 @@ nav{
     background:
         linear-gradient(
             100deg,
-            #ff3e91,
-            #9b4cff
+            #ff3d91,
+            #994cff
         );
 
     box-shadow:
-        0 0 35px rgba(255,50,150,.3),
-        0 20px 50px rgba(0,0,0,.4);
+        0 0 35px
+        rgba(255,50,150,.28),
+        0 20px 50px
+        rgba(0,0,0,.4);
 
     cursor:pointer;
 
     transition:.4s;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
 .hero-button:hover{
@@ -368,63 +527,25 @@ nav{
         scale(1.04);
 
     box-shadow:
-        0 0 60px rgba(255,50,150,.5);
+        0 0 60px
+        rgba(255,50,150,.5);
 }
 
-.orb{
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            rgba(255,255,255,.7),
-            rgba(255,80,170,.2) 15%,
-            rgba(150,60,255,.08) 45%,
-            transparent 70%
-        );
-
-    filter:blur(2px);
-
-    opacity:.55;
-
-    animation:orb 7s ease-in-out infinite;
+.hero-button:active{
+    transform:scale(.96);
 }
 
-@keyframes orb{
-    0%,100%{
-        transform:scale(1) translateY(0);
-    }
-
-    50%{
-        transform:scale(1.08) translateY(-25px);
-    }
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* ===============================
-   GENERAL SECTIONS
-================================ */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 section{
     position:relative;
+
     z-index:5;
-    padding:110px 20px;
+
+    padding:
+        110px 20px;
 }
 
 .section-title{
@@ -448,9 +569,9 @@ section{
     font-size:13px;
 }
 
-/* ===============================
+/* =====================================================
    DATE
-================================ */
+===================================================== */
 
 .date-section{
     text-align:center;
@@ -458,16 +579,17 @@ section{
 
 .date-circle{
     width:
-        clamp(240px,50vw,400px);
+        clamp(240px,52vw,400px);
 
     height:
-        clamp(240px,50vw,400px);
+        clamp(240px,52vw,400px);
+
+    margin:75px auto 40px;
 
     border-radius:50%;
 
-    margin:70px auto 40px;
-
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -478,16 +600,20 @@ section{
     background:
         radial-gradient(
             circle,
-            rgba(255,100,180,.15),
-            rgba(120,50,180,.05),
+            rgba(255,90,180,.15),
+            rgba(110,50,180,.05),
             transparent 70%
         );
 
-    border:1px solid rgba(255,255,255,.1);
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 
     box-shadow:
-        0 0 80px rgba(255,50,150,.12),
-        inset 0 0 60px rgba(255,255,255,.03);
+        0 0 80px
+        rgba(255,50,150,.12),
+        inset 0 0 60px
+        rgba(255,255,255,.03);
 
     animation:
         dateFloat 5s ease-in-out infinite;
@@ -497,6 +623,7 @@ section{
     content:"";
 
     position:absolute;
+
     inset:-20px;
 
     border-radius:50%;
@@ -509,7 +636,36 @@ section{
         spin 15s linear infinite;
 }
 
+.date-number{
+    font-family:'Cinzel',serif;
+
+    font-size:90px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #fff,
+            #ff9bc9,
+            #bd8aff
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.date-month{
+    margin-top:15px;
+
+    font-size:13px;
+
+    letter-spacing:8px;
+
+    color:#aaa;
+}
+
 @keyframes dateFloat{
+
     0%,100%{
         transform:translateY(0);
     }
@@ -519,33 +675,9 @@ section{
     }
 }
 
-.date-number{
-    font-family:'Cinzel',serif;
-    font-size:90px;
-    line-height:1;
-
-    background:
-        linear-gradient(
-            120deg,
-            white,
-            #ff9bc9,
-            #bd8aff
-        );
-
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.date-month{
-    font-size:13px;
-    letter-spacing:8px;
-    color:#aaa;
-    margin-top:15px;
-}
-
-/* ===============================
+/* =====================================================
    COUNTDOWN
-================================ */
+===================================================== */
 
 .countdown{
     max-width:850px;
@@ -579,29 +711,36 @@ section{
             rgba(255,255,255,.02)
         );
 
-    border:1px solid rgba(255,255,255,.1);
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 
     backdrop-filter:blur(20px);
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.3);
+        0 25px 70px
+        rgba(0,0,0,.3);
 }
 
 .time-number{
     font-family:'Cinzel',serif;
+
     font-size:42px;
 }
 
 .time-label{
     margin-top:10px;
+
     color:#8f8491;
+
     font-size:9px;
+
     letter-spacing:4px;
 }
 
-/* ===============================
-   3D CAKE
-================================ */
+/* =====================================================
+   CAKE
+===================================================== */
 
 .cake-area{
     min-height:720px;
@@ -609,7 +748,6 @@ section{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     flex-direction:column;
@@ -621,26 +759,13 @@ section{
 
     position:relative;
 
-    margin:80px auto 50px;
+    margin:
+        80px auto 50px;
 
     transform-style:preserve-3d;
 
     animation:
         cakeFloat 5s ease-in-out infinite;
-}
-
-@keyframes cakeFloat{
-    0%,100%{
-        transform:
-            translateY(0)
-            rotateY(-8deg);
-    }
-
-    50%{
-        transform:
-            translateY(-15px)
-            rotateY(8deg);
-    }
 }
 
 .cake-bottom{
@@ -770,10 +895,12 @@ section{
         0 0 20px #ffb347,
         0 0 60px #ff4500;
 
-    animation:flame 1s infinite alternate;
+    animation:
+        flame 1s infinite alternate;
 }
 
 @keyframes flame{
+
     from{
         transform:
             rotate(-45deg)
@@ -787,12 +914,28 @@ section{
     }
 }
 
-/* ===============================
+@keyframes cakeFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotateY(-8deg);
+    }
+
+    50%{
+        transform:
+            translateY(-15px)
+            rotateY(8deg);
+    }
+}
+
+/* =====================================================
    MESSAGE
-================================ */
+===================================================== */
 
 .message-container{
     max-width:900px;
+
     margin:60px auto 0;
 }
 
@@ -809,34 +952,15 @@ section{
             rgba(255,255,255,.02)
         );
 
-    border:1px solid rgba(255,255,255,.1);
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 
     backdrop-filter:blur(25px);
 
     box-shadow:
-        0 40px 100px rgba(0,0,0,.45);
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.message-card::before{
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    right:-150px;
-    top:-150px;
-
-    background:#ff3d91;
-
-    filter:blur(130px);
-
-    opacity:.12;
+        0 40px 100px
+        rgba(0,0,0,.45);
 }
 
 .message{
@@ -864,9 +988,9 @@ section{
     font-size:14px;
 }
 
-/* ===============================
+/* =====================================================
    WISHES
-================================ */
+===================================================== */
 
 .wishes{
     max-width:1100px;
@@ -929,18 +1053,21 @@ section{
 
 .wish h3{
     font-family:'Cinzel',serif;
+
     margin-bottom:12px;
 }
 
 .wish p{
     color:#958a97;
+
     font-size:13px;
+
     line-height:1.8;
 }
 
-/* ===============================
+/* =====================================================
    GIFT
-================================ */
+===================================================== */
 
 .gift-section{
     min-height:700px;
@@ -948,7 +1075,6 @@ section{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     flex-direction:column;
@@ -962,26 +1088,13 @@ section{
 
     position:relative;
 
-    margin:80px auto 45px;
+    margin:
+        80px auto 45px;
 
     cursor:pointer;
 
     animation:
         giftFloat 3s ease-in-out infinite;
-}
-
-@keyframes giftFloat{
-    0%,100%{
-        transform:
-            translateY(0)
-            rotateY(-8deg);
-    }
-
-    50%{
-        transform:
-            translateY(-15px)
-            rotateY(8deg);
-    }
 }
 
 .gift-box{
@@ -1090,9 +1203,24 @@ section{
     transform:rotate(-25deg);
 }
 
-/* ===============================
+@keyframes giftFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotateY(-8deg);
+    }
+
+    50%{
+        transform:
+            translateY(-15px)
+            rotateY(8deg);
+    }
+}
+
+/* =====================================================
    FINAL
-================================ */
+===================================================== */
 
 .final{
     min-height:90vh;
@@ -1100,7 +1228,6 @@ section{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     flex-direction:column;
@@ -1139,7 +1266,8 @@ section{
 
     color:transparent;
 
-    animation:gradientMove 7s infinite;
+    animation:
+        gradientMove 7s infinite;
 }
 
 .final-message{
@@ -1152,9 +1280,9 @@ section{
     font-size:14px;
 }
 
-/* ===============================
+/* =====================================================
    FOOTER
-================================ */
+===================================================== */
 
 footer{
     text-align:center;
@@ -1169,9 +1297,9 @@ footer{
     letter-spacing:3px;
 }
 
-/* ===============================
+/* =====================================================
    MODAL
-================================ */
+===================================================== */
 
 .modal{
     position:fixed;
@@ -1183,7 +1311,6 @@ footer{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
@@ -1192,6 +1319,7 @@ footer{
         rgba(0,0,0,.82);
 
     backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
     opacity:0;
 
@@ -1276,9 +1404,9 @@ footer{
     cursor:pointer;
 }
 
-/* ===============================
-   FLOATING HEARTS
-================================ */
+/* =====================================================
+   HEARTS
+===================================================== */
 
 .heart{
     position:fixed;
@@ -1294,6 +1422,7 @@ footer{
 }
 
 @keyframes heartFloat{
+
     0%{
         transform:
             translateY(0)
@@ -1317,9 +1446,9 @@ footer{
     }
 }
 
-/* ===============================
+/* =====================================================
    CONFETTI
-================================ */
+===================================================== */
 
 .confetti{
     position:fixed;
@@ -1336,6 +1465,7 @@ footer{
 }
 
 @keyframes confettiFall{
+
     to{
         transform:
             translateY(110vh)
@@ -1343,9 +1473,9 @@ footer{
     }
 }
 
-/* ===============================
+/* =====================================================
    REVEAL
-================================ */
+===================================================== */
 
 .reveal{
     opacity:0;
@@ -1363,32 +1493,40 @@ footer{
     transform:translateY(0);
 }
 
-/* ===============================
+/* =====================================================
    MOBILE
-================================ */
+===================================================== */
 
 @media(max-width:700px){
 
     nav{
         top:12px;
 
-        height:55px;
+        height:56px;
 
-        padding:0 15px;
+        padding:
+            0 14px 0 17px;
     }
 
     .logo{
-        font-size:23px;
+        font-size:24px;
     }
 
-    .nav-center{
+    .nav-date{
         font-size:8px;
+
         letter-spacing:2px;
     }
 
     .music-btn{
-        width:35px;
-        height:35px;
+        width:38px;
+        height:38px;
+
+        font-size:15px;
+    }
+
+    .music-status{
+        display:none;
     }
 
     .orb{
@@ -1397,12 +1535,17 @@ footer{
     }
 
     .intro{
-        letter-spacing:4px;
         font-size:9px;
+        letter-spacing:4px;
     }
 
     .hero-title{
         letter-spacing:5px;
+    }
+
+    .hero-description{
+        font-size:13px;
+        padding:0 10px;
     }
 
     .countdown{
@@ -1430,27 +1573,37 @@ footer{
         padding:35px 22px;
     }
 
-}
-
-/* ===============================
-   REDUCED MOTION
-================================ */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        scroll-behavior:auto !important;
+    .message-text{
+        font-size:13px;
     }
 }
+
+@media(max-width:380px){
+
+    .hero-name{
+        font-size:75px;
+    }
+
+    .hero-title{
+        font-size:18px;
+    }
+
+    .date-number{
+        font-size:70px;
+    }
+
+    .date-circle{
+        width:220px;
+        height:220px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="background"></div>
 
 <!-- LOADER -->
@@ -1467,29 +1620,66 @@ footer{
 <!-- PARTICLES -->
 <div id="particles"></div>
 
-<!-- NAVIGATION -->
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
+<audio
+    id="birthdayAudio"
+    preload="auto"
+    loop
+    playsinline>
+
+    <source
+        src="./birthday.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
 <nav>
 
     <div class="logo">
         Fathima ✦
     </div>
 
-    <div class="nav-center">
+    <div class="nav-date">
         OCTOBER 09
     </div>
 
-    <button
-        class="music-btn"
-        id="musicBtn">
-        ♫
-    </button>
+    <div class="music-area">
+
+        <span
+            class="music-status"
+            id="musicStatus">
+
+            Music on
+
+        </span>
+
+        <button
+            class="music-btn"
+            id="musicBtn"
+            type="button"
+            aria-label="Play birthday music">
+
+            ♫
+
+        </button>
+
+    </div>
 
 </nav>
 
 
-<!-- ===============================
+<!-- =====================================================
      HERO
-================================ -->
+===================================================== -->
 
 <section class="hero">
 
@@ -1511,7 +1701,8 @@ footer{
 
         <p class="hero-description">
 
-            There are some dates that are easy to remember.
+            There are some dates that are
+            easy to remember.
 
             <br>
 
@@ -1519,15 +1710,16 @@ footer{
 
             <br><br>
 
-            A date that deserves a little more
-            light, a little more magic,
+            A date that deserves a little
+            more light, a little more magic,
             and a very special wish.
 
         </p>
 
         <button
             class="hero-button"
-            onclick="openSurprise()">
+            id="enterButton"
+            type="button">
 
             ✨ ENTER YOUR SURPRISE
 
@@ -1538,9 +1730,9 @@ footer{
 </section>
 
 
-<!-- ===============================
+<!-- =====================================================
      DATE
-================================ -->
+===================================================== -->
 
 <section class="date-section reveal">
 
@@ -1567,9 +1759,9 @@ footer{
 </section>
 
 
-<!-- ===============================
+<!-- =====================================================
      COUNTDOWN
-================================ -->
+===================================================== -->
 
 <section class="reveal">
 
@@ -1588,7 +1780,9 @@ footer{
             <div
                 class="time-number"
                 id="days">
+
                 00
+
             </div>
 
             <div class="time-label">
@@ -1597,12 +1791,15 @@ footer{
 
         </div>
 
+
         <div class="time-box">
 
             <div
                 class="time-number"
                 id="hours">
+
                 00
+
             </div>
 
             <div class="time-label">
@@ -1611,12 +1808,15 @@ footer{
 
         </div>
 
+
         <div class="time-box">
 
             <div
                 class="time-number"
                 id="minutes">
+
                 00
+
             </div>
 
             <div class="time-label">
@@ -1625,12 +1825,15 @@ footer{
 
         </div>
 
+
         <div class="time-box">
 
             <div
                 class="time-number"
                 id="seconds">
+
                 00
+
             </div>
 
             <div class="time-label">
@@ -1644,9 +1847,9 @@ footer{
 </section>
 
 
-<!-- ===============================
+<!-- =====================================================
      CAKE
-================================ -->
+===================================================== -->
 
 <section class="cake-area reveal">
 
@@ -1681,9 +1884,9 @@ footer{
 </section>
 
 
-<!-- ===============================
-     PERSONAL MESSAGE
-================================ -->
+<!-- =====================================================
+     MESSAGE
+===================================================== -->
 
 <section class="reveal">
 
@@ -1722,7 +1925,7 @@ footer{
                 I hope today brings you
                 genuine smiles,
                 beautiful moments,
-                peaceful thoughts
+                peaceful thoughts,
                 and memories you will keep
                 for a long time.
 
@@ -1743,9 +1946,9 @@ footer{
 </section>
 
 
-<!-- ===============================
+<!-- =====================================================
      WISHES
-================================ -->
+===================================================== -->
 
 <section class="reveal">
 
@@ -1770,11 +1973,9 @@ footer{
             </h3>
 
             <p>
-
                 May your days be filled with
                 little moments that make you
                 smile without even trying.
-
             </p>
 
         </div>
@@ -1791,11 +1992,9 @@ footer{
             </h3>
 
             <p>
-
                 May the dreams you carry quietly
                 become beautiful memories
                 you can proudly look back on.
-
             </p>
 
         </div>
@@ -1812,11 +2011,9 @@ footer{
             </h3>
 
             <p>
-
                 May this new chapter of your life
                 give you countless moments
                 worth remembering.
-
             </p>
 
         </div>
@@ -1826,9 +2023,9 @@ footer{
 </section>
 
 
-<!-- ===============================
+<!-- =====================================================
      GIFT
-================================ -->
+===================================================== -->
 
 <section class="gift-section reveal">
 
@@ -1842,7 +2039,7 @@ footer{
 
     <div
         class="gift"
-        onclick="openGift()">
+        id="gift">
 
         <div class="bow"></div>
 
@@ -1858,7 +2055,8 @@ footer{
 
     <button
         class="hero-button"
-        onclick="openGift()">
+        id="giftButton"
+        type="button">
 
         🎁 OPEN THE SURPRISE
 
@@ -1867,9 +2065,9 @@ footer{
 </section>
 
 
-<!-- ===============================
+<!-- =====================================================
      FINAL
-================================ -->
+===================================================== -->
 
 <section class="final reveal">
 
@@ -1913,15 +2111,13 @@ footer{
 
 
 <footer>
-
     MADE WITH ✦ FOR FATHIMA
-
 </footer>
 
 
-<!-- ===============================
+<!-- =====================================================
      MODAL
-================================ -->
+===================================================== -->
 
 <div
     class="modal"
@@ -1967,7 +2163,8 @@ footer{
 
         <button
             class="close"
-            onclick="closeModal()">
+            id="closeButton"
+            type="button">
 
             CLOSE ✦
 
@@ -1980,33 +2177,27 @@ footer{
 
 <script>
 
-/* =========================================
+/* =====================================================
    LOADER
-========================================= */
+===================================================== */
 
-window.addEventListener(
-    "load",
-    () => {
+window.addEventListener("load", function(){
 
-        setTimeout(
-            () => {
+    setTimeout(function(){
 
-                document
-                    .getElementById("loader")
-                    .classList
-                    .add("hide");
+        document
+            .getElementById("loader")
+            .classList
+            .add("hide");
 
-            },
-            1800
-        );
+    }, 1500);
 
-    }
-);
+});
 
 
-/* =========================================
+/* =====================================================
    PARTICLES
-========================================= */
+===================================================== */
 
 const particleContainer =
     document.getElementById("particles");
@@ -2038,14 +2229,13 @@ for(let i = 0; i < 110; i++){
 }
 
 
-/* =========================================
-   OCTOBER 9 COUNTDOWN
-========================================= */
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 
 function getNextBirthday(){
 
-    const now =
-        new Date();
+    const now = new Date();
 
     let year =
         now.getFullYear();
@@ -2091,20 +2281,16 @@ function updateCountdown(){
 
     if(difference <= 0){
 
-        document
-            .getElementById("days")
+        document.getElementById("days")
             .textContent = "00";
 
-        document
-            .getElementById("hours")
+        document.getElementById("hours")
             .textContent = "00";
 
-        document
-            .getElementById("minutes")
+        document.getElementById("minutes")
             .textContent = "00";
 
-        document
-            .getElementById("seconds")
+        document.getElementById("seconds")
             .textContent = "00";
 
         return;
@@ -2134,29 +2320,22 @@ function updateCountdown(){
         );
 
 
-    document
-        .getElementById("days")
+    document.getElementById("days")
         .textContent =
         String(days)
         .padStart(2,"0");
 
-
-    document
-        .getElementById("hours")
+    document.getElementById("hours")
         .textContent =
         String(hours)
         .padStart(2,"0");
 
-
-    document
-        .getElementById("minutes")
+    document.getElementById("minutes")
         .textContent =
         String(minutes)
         .padStart(2,"0");
 
-
-    document
-        .getElementById("seconds")
+    document.getElementById("seconds")
         .textContent =
         String(seconds)
         .padStart(2,"0");
@@ -2171,9 +2350,9 @@ setInterval(
 );
 
 
-/* =========================================
+/* =====================================================
    FLOATING HEARTS
-========================================= */
+===================================================== */
 
 function createHeart(){
 
@@ -2208,21 +2387,20 @@ function createHeart(){
         : "#c38cff";
 
     heart.style.fontSize =
-        (12 + Math.random() * 24)
-        + "px";
+        (12 + Math.random() * 24) + "px";
 
     heart.style.animationDuration =
-        (4 + Math.random() * 4)
-        + "s";
+        (4 + Math.random() * 4) + "s";
 
     document.body.appendChild(
         heart
     );
 
-    setTimeout(
-        () => heart.remove(),
-        8000
-    );
+    setTimeout(function(){
+
+        heart.remove();
+
+    },8000);
 
 }
 
@@ -2232,55 +2410,21 @@ setInterval(
 );
 
 
-/* =========================================
-   SURPRISE
-========================================= */
-
-function openSurprise(){
-
-    document
-        .getElementById("modal")
-        .classList
-        .add("active");
-
-    launchConfetti();
-
-}
-
-
-function openGift(){
-
-    launchConfetti();
-
-    document
-        .getElementById("modal")
-        .classList
-        .add("active");
-
-}
-
-
-function closeModal(){
-
-    document
-        .getElementById("modal")
-        .classList
-        .remove("active");
-
-}
-
-
-/* =========================================
+/* =====================================================
    CONFETTI
-========================================= */
+===================================================== */
 
 function launchConfetti(){
 
-    for(
-        let i = 0;
-        i < 130;
-        i++
-    ){
+    const colors = [
+        "#ff5ca8",
+        "#d18cff",
+        "#ffd86b",
+        "#ffffff",
+        "#72e8ff"
+    ];
+
+    for(let i = 0; i < 130; i++){
 
         const piece =
             document.createElement("div");
@@ -2293,16 +2437,7 @@ function launchConfetti(){
 
         piece.style.top =
             (-20 -
-            Math.random() * 100)
-            + "px";
-
-        const colors = [
-            "#ff5ca8",
-            "#d18cff",
-            "#ffd86b",
-            "#ffffff",
-            "#72e8ff"
-        ];
+            Math.random() * 100) + "px";
 
         piece.style.background =
             colors[
@@ -2313,36 +2448,115 @@ function launchConfetti(){
             ];
 
         piece.style.animationDuration =
-            (2 + Math.random() * 3)
-            + "s";
-
-        piece.style.transform =
-            `rotate(${Math.random()*360}deg)`;
+            (2 + Math.random() * 3) + "s";
 
         document.body.appendChild(
             piece
         );
 
-        setTimeout(
-            () => piece.remove(),
-            5000
-        );
+        setTimeout(function(){
+
+            piece.remove();
+
+        },5000);
 
     }
 
 }
 
 
-/* =========================================
+/* =====================================================
+   MODAL
+===================================================== */
+
+const modal =
+    document.getElementById("modal");
+
+function openSurprise(){
+
+    modal.classList.add("active");
+
+    launchConfetti();
+
+}
+
+function closeModal(){
+
+    modal.classList.remove("active");
+
+}
+
+
+document
+    .getElementById("enterButton")
+    .addEventListener(
+        "click",
+        openSurprise
+    );
+
+
+document
+    .getElementById("giftButton")
+    .addEventListener(
+        "click",
+        openSurprise
+    );
+
+
+document
+    .getElementById("gift")
+    .addEventListener(
+        "click",
+        openSurprise
+    );
+
+
+document
+    .getElementById("closeButton")
+    .addEventListener(
+        "click",
+        closeModal
+    );
+
+
+modal.addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === modal){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
    SCROLL REVEAL
-========================================= */
+===================================================== */
 
 const observer =
     new IntersectionObserver(
-        entries => {
+        function(entries){
 
             entries.forEach(
-                entry => {
+                function(entry){
 
                     if(
                         entry.isIntersecting
@@ -2367,147 +2581,267 @@ const observer =
 document
     .querySelectorAll(".reveal")
     .forEach(
-        element =>
-            observer.observe(element)
+        function(element){
+
+            observer.observe(element);
+
+        }
     );
 
 
-/* =========================================
+/* =====================================================
    MOUSE PARALLAX
-========================================= */
+===================================================== */
 
 document.addEventListener(
     "mousemove",
-    event => {
-
-        const x =
-            (event.clientX /
-            window.innerWidth - .5)
-            * 15;
-
-        const y =
-            (event.clientY /
-            window.innerHeight - .5)
-            * 15;
+    function(event){
 
         const orb =
             document.querySelector(".orb");
 
-        if(orb){
-
-            orb.style.transform =
-                `translate(${x}px,${y}px)`;
-
+        if(!orb){
+            return;
         }
+
+        const x =
+            (event.clientX /
+            window.innerWidth - .5) * 15;
+
+        const y =
+            (event.clientY /
+            window.innerHeight - .5) * 15;
+
+        orb.style.transform =
+            `translate(${x}px,${y}px)`;
 
     }
 );
 
 
-/* =========================================
-   CLOSE MODAL OUTSIDE
-========================================= */
+/* =====================================================
+   🎵 REAL BIRTHDAY AUDIO
+===================================================== */
 
-document
-    .getElementById("modal")
-    .addEventListener(
-        "click",
-        event => {
+const audio =
+    document.getElementById(
+        "birthdayAudio"
+    );
 
-            if(
-                event.target.id === "modal"
-            ){
+const musicBtn =
+    document.getElementById(
+        "musicBtn"
+    );
 
-                closeModal();
-
-            }
-
-        }
+const musicStatus =
+    document.getElementById(
+        "musicStatus"
     );
 
 
-/* =========================================
-   ESCAPE
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if(
-            event.key === "Escape"
-        ){
-
-            closeModal();
-
-        }
-
-    }
-);
-
-
-/* =========================================
-   MUSIC
-========================================= */
-
-/*
-
-To add music:
-
-1. Put birthday.mp3 beside index.html
-
-2. Uncomment:
-
-const music =
-    new Audio("birthday.mp3");
-
-3. Then use the music button.
-
-*/
-
-let music = null;
 let musicPlaying = false;
 
-document
-    .getElementById("musicBtn")
-    .addEventListener(
-        "click",
-        () => {
 
-            if(!music){
+/*
+    IMPORTANT:
 
-                alert(
-                    "Add birthday.mp3 beside index.html and connect it in the JavaScript section."
-                );
+    The browser will NOT allow automatic
+    audio playback before user interaction.
 
-                return;
+    Therefore the first tap on ♫ starts
+    the birthday.mp3 file.
+*/
 
-            }
 
-            if(musicPlaying){
+musicBtn.addEventListener(
+    "click",
+    async function(){
 
-                music.pause();
+        try{
 
-                musicPlaying = false;
+            if(!musicPlaying){
 
-                document
-                    .getElementById("musicBtn")
-                    .textContent = "♫";
+                /*
+                    Reset only if audio has
+                    reached the end.
+                */
 
-            }else{
+                if(
+                    audio.ended
+                ){
 
-                music.play();
+                    audio.currentTime = 0;
+
+                }
+
+
+                await audio.play();
+
 
                 musicPlaying = true;
 
-                document
-                    .getElementById("musicBtn")
-                    .textContent = "❚❚";
+
+                musicBtn.classList
+                    .add("playing");
+
+
+                musicBtn.innerHTML =
+                    "❚❚";
+
+
+                musicStatus.textContent =
+                    "Music on";
+
+
+                musicStatus.classList
+                    .add("show");
+
+            }
+
+            else{
+
+                audio.pause();
+
+
+                musicPlaying = false;
+
+
+                musicBtn.classList
+                    .remove("playing");
+
+
+                musicBtn.innerHTML =
+                    "♫";
+
+
+                musicStatus.textContent =
+                    "Music off";
 
             }
 
         }
-    );
+
+        catch(error){
+
+            console.error(
+                "AUDIO ERROR:",
+                error
+            );
+
+            musicPlaying = false;
+
+            musicBtn.classList
+                .remove("playing");
+
+            musicBtn.innerHTML =
+                "⚠";
+
+            musicStatus.textContent =
+                "Audio unavailable";
+
+            musicStatus.classList
+                .add("show");
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   AUDIO EVENTS
+===================================================== */
+
+audio.addEventListener(
+    "playing",
+    function(){
+
+        musicPlaying = true;
+
+        musicBtn.classList
+            .add("playing");
+
+        musicBtn.innerHTML =
+            "❚❚";
+
+        musicStatus.textContent =
+            "Music on";
+
+    }
+);
+
+
+audio.addEventListener(
+    "pause",
+    function(){
+
+        musicPlaying = false;
+
+        musicBtn.classList
+            .remove("playing");
+
+        musicBtn.innerHTML =
+            "♫";
+
+    }
+);
+
+
+audio.addEventListener(
+    "ended",
+    function(){
+
+        musicPlaying = false;
+
+        musicBtn.classList
+            .remove("playing");
+
+        musicBtn.innerHTML =
+            "♫";
+
+    }
+);
+
+
+/* =====================================================
+   AUDIO ERROR
+===================================================== */
+
+audio.addEventListener(
+    "error",
+    function(){
+
+        console.error(
+            "Could not load birthday.mp3"
+        );
+
+        musicBtn.innerHTML =
+            "⚠";
+
+        musicStatus.textContent =
+            "Check birthday.mp3";
+
+        musicStatus.classList
+            .add("show");
+
+    }
+);
+
+
+/* =====================================================
+   AUDIO LOADED
+===================================================== */
+
+audio.addEventListener(
+    "canplay",
+    function(){
+
+        console.log(
+            "birthday.mp3 is ready."
+        );
+
+    }
+);
 
 </script>
 
